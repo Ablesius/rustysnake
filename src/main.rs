@@ -22,18 +22,16 @@ const SNAKE_HEAD_COLOUR: Color = Color::rgb(0.7, 0.7, 0.7);
 
 fn spawn_snake(mut commands: Commands) {
     commands
-        .spawn(
-            SpriteBundle {
-                sprite: Sprite {
-                    color: SNAKE_HEAD_COLOUR,
-                    ..default()
-                },
-                transform: Transform {
-                    scale: Vec3::new(10.0, 10.0, 10.0),
-                    ..default()
-                },
+        .spawn(SpriteBundle {
+            sprite: Sprite {
+                color: SNAKE_HEAD_COLOUR,
                 ..default()
-            }
-        )
+            },
+            transform: Transform {
+                scale: Vec3::new(10.0, 10.0, 10.0),
+                ..default()
+            },
+            ..default()
+        })
         .insert(SnakeHead);
 }
