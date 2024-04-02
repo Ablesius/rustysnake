@@ -21,7 +21,7 @@ fn setup_camera(mut commands: Commands) {
 #[derive(Component)]
 struct SnakeHead;
 
-const SNAKE_HEAD_COLOUR: Color = Color::rgb(0.7, 0.7, 0.7);
+const SNAKE_HEAD_COLOUR: Color = Color::rgb(102.0, 0.0, 204.0);
 
 fn spawn_snake(mut commands: Commands) {
     commands
