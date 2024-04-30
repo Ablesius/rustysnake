@@ -2,6 +2,10 @@ use bevy::prelude::*;
 
 fn main() {
     App::new()
+        .insert_resource(ClearColor(
+            // f32 = u8 / U8::MAX
+            Color::rgb(0.0, 0.0, 0.0),
+        ))
         .add_systems(Startup, setup_camera)
         .add_systems(Startup, spawn_snake)
         // needs to be in Update; if we leave it in
@@ -18,7 +22,9 @@ fn setup_camera(mut commands: Commands) {
 #[derive(Component)]
 struct SnakeHead;
 
-const SNAKE_HEAD_COLOUR: Color = Color::rgb(102.0, 0.0, 204.0);
+// 102, 0, 204 in u8;
+// it's a nice dark purple
+const SNAKE_HEAD_COLOUR: Color = Color::rgb(0.4, 0.0, 0.8);
 
 fn spawn_snake(mut commands: Commands) {
     commands
